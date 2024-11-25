@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<div class="min-h-screen bg-gray-50 text-gray-900">
+    
+    <section style="background: linear-gradient(to right, #3b82f6, #6366f1); color: white; padding: 5rem 1rem; text-align: center;">
+        <div style="animation: fade-in 1.5s ease-in-out;">
+            <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">About Us</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Learn more about our Hostel Management System and how we help streamline student accommodation management.</p>
+        </div>
+    </section>
+
+    
+    <section style="padding: 4rem 1rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">Our Vision</h2>
+                <p style="color: #555;">Our vision is to create a smart, efficient, and seamless experience for managing student accommodations, ensuring better resource allocation, enhanced communication, and improved student satisfaction.</p>
+            </div>
+
+            
+            <div class="card" style="box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); border-radius: 0.75rem; padding: 2rem; margin-bottom: 2rem; background-color: #ffffff;">
+                <h3 style="font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem;">Our Mission</h3>
+                <p style="color: #555;">We are committed to delivering the best possible hostel management solution by combining advanced technology with user-friendly interfaces to facilitate seamless operations for both students and administrators.</p>
+            </div>
+
+            
+            <div style="margin-top: 4rem;">
+                <h3 style="font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem;">Meet Our Team</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                    
+                    <div class="team-member" style="text-align: center; padding: 1rem; background-color: #f9fafb; border-radius: 0.5rem; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="/images/farihin.png" alt="Team Member" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Farihin</h4>
+                        <p style="color: #555;">CEO & Founder</p>
+                    </div>
+                   
+                    <div class="team-member" style="text-align: center; padding: 1rem; background-color: #f9fafb; border-radius: 0.5rem; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="/images/auji.png" alt="Team Member" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Najjatul Auji</h4>
+                        <p style="color: #555;">CTO</p>
+                    </div>
+                    
+                    <div class="team-member" style="text-align: center; padding: 1rem; background-color: #f9fafb; border-radius: 0.5rem; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);">
+                        <img src="/images/dayang.png" alt="Team Member" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem;">
+                        <h4 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Dayang Nur Fatihah</h4>
+                        <p style="color: #555;">Lead Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer style="background-color: #1f2937; color: white; padding: 2rem 1rem; text-align: center;">
+        <p>&copy; 2024 Hostel Management System. All rights reserved.</p>
+    </footer>
+</div>
+
+<style>
+    
+    .team-member:hover {
+        background-color: #e5e7eb;
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+
+    
+    .card {
+        background-color: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<script>
+    // Optional animation for fade-in effect
+    document.querySelectorAll('.team-member').forEach(function(item, index) {
+        item.style.animation = `fade-in 1.5s ease-in-out ${index * 0.5}s`;
+    });
+</script>

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HostelManagementSystem</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HostelManagementAPI.styles.css" asp-append-version="true" />
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white; 
+            color: black; 
+        }
+
+       
+        .navbar {
+            background-color: white; 
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: black; 
+        }
+
+            .navbar-brand:hover {
+                color: #ffcc00; 
+            }
+
+        .nav-link {
+            font-size: 1rem;
+            color: black; 
+            padding: 1rem;
+            transition: color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: #ffcc00; 
+            }
+
+        .navbar-toggler-icon {
+            background-color: black; 
+        }
+
+        .navbar-collapse {
+            justify-content: space-between;
+        }
+
+        
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .navbar.scrolled {
+            background-color: #f8f9fa;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+            .fade-in.visible {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-sm navbar-light mb-3">
+        <div class="container-fluid fade-in">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HostelManagementSystem</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Students" asp-action="Index">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Dorms" asp-action="Index">Dorm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - HostelManagementAPI - <a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Scroll Animation -->
+    <script>
+        
+        window.onscroll = function() { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.querySelector('.navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('scrolled');
+            }
+        }
+
+        // Fade-in effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+</html>

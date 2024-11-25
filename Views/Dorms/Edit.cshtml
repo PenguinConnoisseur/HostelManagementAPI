@@ -1,0 +1,30 @@
+﻿@model HostelManagementAPI.Models.Dorm
+
+<h2>Edit Dorm</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="DormID" /> <!-- Hidden field to store DormID -->
+
+    <div class="form-group">
+        <label asp-for="DormName" class="control-label"></label>
+        <input asp-for="DormName" class="form-control" />
+        <span asp-validation-for="DormName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Capacity" class="control-label"></label>
+        <input asp-for="Capacity" class="form-control" />
+        <span asp-validation-for="Capacity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OccupiedSlots" class="control-label"></label>
+        <input asp-for="OccupiedSlots" class="form-control" />
+        <span asp-validation-for="OccupiedSlots" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GenderAllowed" class="control-label"></label>
+        <input asp-for="GenderAllowed" class="form-control" />
+        <span asp-validation-for="GenderAllowed" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

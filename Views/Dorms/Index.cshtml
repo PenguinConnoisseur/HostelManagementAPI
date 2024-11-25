@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HostelManagementAPI.Models.Dorm>
+
+<h2>Dorms List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Dorm Name</th>
+            <th>Capacity</th>
+            <th>Occupied Slots</th>
+            <th>Gender Allowed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dorm in Model)
+        {
+            <tr>
+                <td>@dorm.DormName</td>
+                <td>@dorm.Capacity</td>
+                <td>@dorm.OccupiedSlots</td>
+                <td>@dorm.GenderAllowed</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@dorm.DormID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@dorm.DormID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Add New Dorm</a>
+

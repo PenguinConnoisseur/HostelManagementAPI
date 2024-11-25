@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "FAQ";
+}
+
+<div class="min-h-screen bg-gray-50 text-gray-900">
+    
+    <section style="background: linear-gradient(to right, #3b82f6, #6366f1); color: white; padding: 5rem 1rem; text-align: center;">
+        <div style="animation: fade-in 1.5s ease-in-out;">
+            <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">Frequently Asked Questions</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Find answers to common queries about our Hostel Management System.</p>
+        </div>
+    </section>
+
+    
+    <section style="padding: 4rem 1rem;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">FAQs</h2>
+                <p style="color: #555;">Browse the frequently asked questions below to learn more about the Hostel Management System.</p>
+            </div>
+
+           
+            <div style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); border-radius: 0.5rem; overflow: hidden;">
+                
+                <div class="faq-item" onclick="toggleFaq(1)" style="border-bottom: 1px solid #eee; cursor: pointer; padding: 1rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">What is the Hostel Management System?</h3>
+                    <div id="faq-1" class="faq-answer" style="height: 0; overflow: hidden; transition: height 0.5s ease-in-out;">
+                        <p>It’s a web-based solution for managing student accommodations efficiently, including dorm allocation, profile management, and report generation.</p>
+                    </div>
+                </div>
+               
+                <div class="faq-item" onclick="toggleFaq(2)" style="border-bottom: 1px solid #eee; cursor: pointer; padding: 1rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">Who can use this system?</h3>
+                    <div id="faq-2" class="faq-answer" style="height: 0; overflow: hidden; transition: height 0.5s ease-in-out;">
+                        <p>The system is designed for hostel administrators and students of our institution.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(3)" style="border-bottom: 1px solid #eee; cursor: pointer; padding: 1rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">What are the main features?</h3>
+                    <div id="faq-3" class="faq-answer" style="height: 0; overflow: hidden; transition: height 0.5s ease-in-out;">
+                        <p>Our platform supports managing student records, tracking dorm occupancy, and generating insightful reports.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(4)" style="border-bottom: 1px solid #eee; cursor: pointer; padding: 1rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">How secure is the system?</h3>
+                    <div id="faq-4" class="faq-answer" style="height: 0; overflow: hidden; transition: height 0.5s ease-in-out;">
+                        <p>We use the latest technologies, including secure databases and robust authentication mechanisms, to ensure data safety.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFaq(5)" style="cursor: pointer; padding: 1rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">How do I get support?</h3>
+                    <div id="faq-5" class="faq-answer" style="height: 0; overflow: hidden; transition: height 0.5s ease-in-out;">
+                        <p>For assistance, please contact our support team at <a href="mailto:support@hostelmanagement.com" style="color: #3b82f6;">support@hostelmanagement.com</a> or visit the 'Contact Us' page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    
+    .faq-item:hover {
+        background-color: #f9f9f9;
+    }
+
+    
+    .faq-answer {
+        height: 0;
+        overflow: hidden;
+        padding: 0 1rem;
+    }
+
+        
+        .faq-answer.open {
+            height: auto;
+            padding: 5rem;
+        }
+</style>
+
+<script>
+    /* Toggle FAQ Answers */
+    function toggleFaq(id) {
+        const answer = document.getElementById(`faq-${id}`);
+        if (answer.classList.contains("open")) {
+            answer.classList.remove("open");
+        } else {
+            // Close all other answers first
+            document.querySelectorAll(".faq-answer").forEach(a => a.classList.remove("open"));
+            answer.classList.add("open");
+        }
+    }
+</script>

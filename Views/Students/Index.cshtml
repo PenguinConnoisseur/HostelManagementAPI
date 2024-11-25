@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HostelManagementAPI.Models.Student>
+
+<h2>Students List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>DormID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.FullName</td>
+                <td>@student.Email</td>
+                <td>@student.PhoneNumber</td>
+                <td>@student.DateOfBirth.ToShortDateString()</td>
+                <td>@student.Gender</td>
+                <td>@student.DormID</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Add New Student</a>
